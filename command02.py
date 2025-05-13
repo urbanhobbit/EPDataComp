@@ -309,17 +309,24 @@ class PoliticalDashboard:
             - Toggle visibility of comparison charts.
             - Download charts as PNG images, data tables as CSV files, or the full dataset as an Excel file for further use.
 
-            The dashboard is built using Streamlit and Plotly, offering interactive charts and data tables for a comprehensive analysis.
+            The dashboard is built using Streamlit and Plotly, offering interactive charts and data tables for a comprehensive analysis. It is deployed on Streamlit Community Cloud, making it accessible online without local setup.
 
-            ## Prerequisites
+            ## Accessing the Deployed App
 
-            Before using the dashboard, ensure you have the following:
+            The Political Dashboard is hosted on Streamlit Community Cloud and can be accessed directly at the following URL:
+            - **App URL**: [Insert your app URL here, e.g., `https://political-dashboard-2025.streamlit.app`]
+
+            Simply open the URL in your web browser to start using the dashboard. No local setup is required to access the deployed version. If you’d like to run the app locally for development or customization, follow the setup instructions below.
+
+            ## Prerequisites (For Local Setup)
+
+            If you want to run the app locally (e.g., for development or offline use), ensure you have the following:
 
             1. **Python 3.8 or higher** installed on your system.
             2. **Required Python packages**:
                - Install the necessary dependencies by running:
                  ```
-                 pip install streamlit pandas plotly kaleido pillow xlsxwriter
+                 pip install streamlit pandas plotly kaleido pillow xlsxwriter openpyxl
                  ```
             3. **Data File**:
                - Ensure the `Data2Add.xlsx` file is in the same directory as the script (`Command_fixed.py`). This file should contain two sheets:
@@ -329,7 +336,7 @@ class PoliticalDashboard:
                - `Logo CO3.png`: A logo image for the dashboard header (optional; if missing, a text header will be used).
                - `styles.css`: A CSS file for custom styling (optional; default styles will be applied if missing).
 
-            ## Setup and Running the Dashboard
+            ## Setup and Running the Dashboard Locally
 
             1. **Save the Script**:
                - Save the script as `Command_fixed.py` in your working directory.
@@ -410,22 +417,25 @@ class PoliticalDashboard:
             ## Troubleshooting
 
             - **Dashboard Doesn’t Load**:
-              - Ensure `Data2Add.xlsx` is in the correct directory and contains the required sheets and columns.
-              - Verify that all Python dependencies are installed (`streamlit`, `pandas`, `plotly`, `kaleido`, `pillow`, `xlsxwriter`).
+              - Ensure `Data2Add.xlsx` is in the correct directory and contains the required sheets and columns (for local setup).
+              - Verify that all Python dependencies are installed (`streamlit`, `pandas`, `plotly`, `kaleido`, `pillow`, `xlsxwriter`, `openpyxl`).
+              - For the deployed app, check the Streamlit Community Cloud logs for errors (accessible via your workspace at `share.streamlit.io`).
             - **Chart Doesn’t Update When Changing Country**:
               - If the chart shows data for the previous country, refresh the page to force a reload. This is a known issue being addressed in future updates.
             - **PNG, CSV, or Excel Download Fails**:
               - Ensure `kaleido` is installed for PNG downloads (`pip install kaleido`).
               - Ensure `xlsxwriter` is installed for Excel exports (`pip install xlsxwriter`).
-              - If running on a hosted environment (e.g., Streamlit Cloud), ensure `kaleido` and `xlsxwriter` are included in your `requirements.txt`.
+              - Ensure `openpyxl` is installed for reading Excel files (`pip install openpyxl`).
+              - If running on Streamlit Community Cloud, ensure `kaleido`, `xlsxwriter`, and `openpyxl` are listed in `requirements.txt`.
             - **Charts Don’t Display**:
-              - Check for errors in the terminal where Streamlit is running. Common issues include missing data columns or invalid data formats in `Data2Add.xlsx`.
+              - Check for errors in the terminal (local setup) or Streamlit Cloud logs (deployed app). Common issues include missing data columns or invalid data formats in `Data2Add.xlsx`.
 
             ## Additional Notes
 
             - **Data Format**: Proportions in the data are normalized automatically. If the values in `Data2Add.xlsx` are in percentages (e.g., 36 for 36%), the dashboard converts them to decimals (0.36) for plotting and then displays them as percentages in tables.
             - **Custom Styling**: You can customize the appearance by editing `styles.css`. If this file is missing, default styles are applied.
             - **Logo**: Replace `Logo CO3.png` with your own logo image to personalize the dashboard header.
+            - **Deployed App Limitations**: The app is hosted on Streamlit Community Cloud’s free tier, which has resource limits (e.g., memory, CPU usage). If the app slows down or becomes nonfunctional, it may have exceeded these limits. Consider applying for increased resources if your app is for educational or nonprofit use.
 
             ## Contact
 
