@@ -1,0 +1,45 @@
+
+/* General background and text colors */
+.stApp {
+    background-color: #F5F5F5;
+    color: #333333;
+}
+
+/* Main content box styling */
+.main > div {
+    padding: 1rem;
+    font-size: 1.15rem;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Header colors */
+h1, h2, h3 {
+    color: #004080;
+}
+
+/* Sidebar styling */
+.sidebar .sidebar-content {
+    background-color: #FFFFFF;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Horizontal rules */
+hr {
+    border-color: #D3D3D3;
+}
+
+/* Button styling */
+.stButton > button {
+    background-color: #004080;
+    color: #FFFFFF;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.stButton > button:hover {
+    background-color: #1f77b4;
+}
