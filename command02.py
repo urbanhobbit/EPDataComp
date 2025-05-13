@@ -121,7 +121,7 @@ class PoliticalDashboard:
         csv_buffer = BytesIO()
         df.to_csv(csv_buffer, index=True)
         csv_buffer.seek(0)
-        b64 = base64.b64encode(csv_buffer.getvalue().encode()).decode()
+        b64 = base64.b64encode(csv_buffer.getvalue()).decode()
         return f'<a href="data:file/csv;base64,{b64}" download="{filename}" role="button" aria-label="Download {filename}">📥 Download as CSV</a>'
 
     def _get_excel_download_link(self, filename):
